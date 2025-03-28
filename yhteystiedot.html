@@ -15,11 +15,17 @@
                     <h1>Rental Store Finland</h1>
                 </a>
             </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
             <div class="nav-links">
                 <a href="index.html">Etusivu</a>
                 <a href="majoituskylat.html">Majoituskylät</a>
                 <a href="palvelut.html">Palvelut</a>
                 <a href="yhteystiedot.html">Yhteystiedot</a>
+                <a href="ohjeet.html">Ohjeet</a>
             </div>
             <div class="contact-button">
                 <a href="yhteystiedot.html" class="btn">Ota yhteyttä</a>
@@ -30,49 +36,50 @@
     <main>
         <section class="page-header">
             <h1>Yhteystiedot</h1>
-            <p>Ota yhteyttä, autamme mielellämme</p>
+            <p>Ota yhteyttä - autamme sinua mielellämme</p>
         </section>
 
         <section class="contact-section">
             <div class="contact-grid">
                 <div class="contact-info">
-                    <h3>Rental Store Finland Oy</h3>
+                    <h2>Rental Store Finland Oy</h2>
+                    <p>Luotettavaa majoituspalvelua vuodesta 2006</p>
                     <div class="contact-details">
                         <div class="contact-person">
                             <h4>Harri Kuusiluoma</h4>
                             <p><i class="fas fa-phone"></i> 050 9117 666</p>
                             <p><i class="fas fa-envelope"></i> harri.kuusiluoma@rentalstore.fi</p>
                         </div>
-                        <div class="contact-person">
-                            <h4>Uusikaupunki</h4>
-                            <p><i class="fas fa-user"></i> Satu Kuusiluoma</p>
-                            <p><i class="fas fa-phone"></i> 050 414 1299</p>
-                            <p><i class="fas fa-envelope"></i> uusikaupunki@rentalstore.fi</p>
-                        </div>
-                        <div class="contact-person">
-                            <h4>Raisio</h4>
-                            <p><i class="fas fa-user"></i> Harri Saastamoinen</p>
-                            <p><i class="fas fa-phone"></i> 050 547 5890</p>
-                            <p><i class="fas fa-envelope"></i> harri.saastamoinen@rentalstore.fi</p>
-                        </div>
                     </div>
                 </div>
                 <div class="contact-form">
-                    <h3>Lähetä viesti</h3>
+                    <h2>Lähetä viesti</h2>
                     <form>
                         <input type="text" placeholder="Nimi" required>
                         <input type="email" placeholder="Sähköposti" required>
                         <input type="tel" placeholder="Puhelinnumero">
                         <select>
-                            <option value="">Valitse yhteyshenkilö</option>
-                            <option value="harri">Harri Kuusiluoma</option>
-                            <option value="satu">Satu Kuusiluoma (Uusikaupunki)</option>
-                            <option value="harri_s">Harri Saastamoinen (Raisio)</option>
+                            <option value="">Valitse aihe</option>
+                            <option value="majoitus">Majoitus</option>
+                            <option value="siivous">Siivouspalvelut</option>
+                            <option value="kuljetus">Kuljetuspalvelut</option>
+                            <option value="muu">Muu kysymys</option>
                         </select>
                         <textarea placeholder="Viesti" required></textarea>
                         <button type="submit" class="submit-button">Lähetä viesti</button>
                     </form>
                 </div>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <div class="cta-content">
+                <h2>Haluatko nähdä majoituskylämme livenä?</h2>
+                <p>Varaa aika ja tule tutustumaan majoituskylämme henkilökohtaisesti. Näytämme sinulle esimerkkihuoneet ja vastaamme kaikkiin kysymyksiisi.</p>
+                <a href="varaa-aika.html" class="cta-button">
+                    <i class="fas fa-calendar-check"></i>
+                    Varaa aika demoon
+                </a>
             </div>
         </section>
     </main>
@@ -95,5 +102,7 @@
             <p>&copy; 2024 Rental Store Finland Oy - Kaikki oikeudet pidätetään</p>
         </div>
     </footer>
+
+    <script src="script.js"></script>
 </body>
 </html> 
