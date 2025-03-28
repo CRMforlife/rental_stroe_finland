@@ -15,6 +15,11 @@
                     <h1>Rental Store Finland</h1>
                 </a>
             </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
             <div class="nav-links">
                 <a href="index.html">Etusivu</a>
                 <a href="majoituskylat.html">Majoituskylät</a>
@@ -30,10 +35,12 @@
     <main>
         <section id="hero" class="hero-section">
             <div class="hero-content">
-                <h1>Rental Store Finland</h1>
-                <p>Luotettavaa tilapäismajoitusta ja palveluja ympäri Suomen</p>
-                <p>Kokonaisvaltaista majoituspalvelua vuodesta 2006</p>
-                <a href="#yhteystiedot" class="cta-button">Kysy tarjous</a>
+                <h1>Tilapäismajoitusta ammattitaidolla</h1>
+                <p>Laadukasta ja joustavaa majoituspalvelua yrityksille ja yksityishenkilöille</p>
+                <a href="varaa-aika.html" class="cta-button">
+                    <i class="fas fa-calendar-check"></i>
+                    Varaa aika demoon
+                </a>
             </div>
         </section>
 
@@ -84,6 +91,22 @@
             </div>
         </section>
 
+        <section class="cta-banner">
+            <div class="cta-banner-content">
+                <div class="cta-banner-text">
+                    <h2>Haluatko tietää enemmän tilapäismajoituksen hankinnasta?</h2>
+                    <p>Lataa ilmainen opas, joka auttaa sinua tekemään oikean valinnan tilapäismajoituksen hankinnassa.</p>
+                    <a href="ohjeet.html" class="cta-button">
+                        <i class="fas fa-download"></i>
+                        Lataa ohjeet
+                    </a>
+                </div>
+                <div class="cta-banner-image">
+                    <img src="images/guide-preview.jpg" alt="Tilapäismajoituksen ohjeet">
+                </div>
+            </div>
+        </section>
+
         <section id="yhteystiedot" class="contact-section">
             <h2>Yhteystiedot</h2>
             <div class="contact-grid">
@@ -101,22 +124,6 @@
                         <textarea placeholder="Viesti" required></textarea>
                         <button type="submit" class="submit-button">Lähetä viesti</button>
                     </form>
-                </div>
-            </div>
-        </section>
-
-        <section class="cta-banner">
-            <div class="cta-banner-content">
-                <div class="cta-banner-text">
-                    <h2>Haluatko tietää enemmän tilapäismajoituksen hankinnasta?</h2>
-                    <p>Lataa ilmainen opas, joka auttaa sinua tekemään oikean valinnan tilapäismajoituksen hankinnassa.</p>
-                    <a href="ohjeet.html" class="cta-button">
-                        <i class="fas fa-download"></i>
-                        Lataa ohjeet
-                    </a>
-                </div>
-                <div class="cta-banner-image">
-                    <img src="images/guide-preview.jpg" alt="Tilapäismajoituksen ohjeet">
                 </div>
             </div>
         </section>
@@ -146,37 +153,14 @@
         <div class="modal-content">
             <span class="close">&times;</span>
             <h2>Tervetuloa Rental Store Finlandiin!</h2>
-            <p>Tarjoamme laadukkaita ja joustavia majoitusratkaisuja, jotka vastaavat juuri sinun tarpeisiisi. Tutustu palveluihimme ja varaa aika katselmuun.</p>
+            <p>Tarjoamme laadukkaita ja joustavia majoitusratkaisuja, jotka vastaavat juuri sinun tarpeisiisi. Tutustu palveluihimme ja varaa aika demoon.</p>
             <a href="varaa-aika.html" class="modal-button">
                 <i class="fas fa-calendar-check"></i>
-                Varaa aika katselmuun
+                Varaa aika demoon
             </a>
         </div>
     </div>
 
-    <script>
-        // Pop-up functionality
-        document.addEventListener('DOMContentLoaded', function() {
-            const modal = document.getElementById('popupModal');
-            const closeBtn = document.querySelector('.close-modal');
-            
-            // Show modal after 5 seconds
-            setTimeout(function() {
-                modal.style.display = 'block';
-            }, 5000);
-
-            // Close modal when clicking the X
-            closeBtn.onclick = function() {
-                modal.style.display = 'none';
-            }
-
-            // Close modal when clicking outside
-            window.onclick = function(event) {
-                if (event.target == modal) {
-                    modal.style.display = 'none';
-                }
-            }
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 </html> 
