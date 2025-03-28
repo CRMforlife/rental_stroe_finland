@@ -104,7 +104,7 @@ h1, h2, h3, h4, h5, h6 {
 /* Hero Section */
 .hero-section {
     height: 100vh;
-    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('images/hero-bg.jpg');
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('images/hero-bg.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -120,48 +120,105 @@ h1, h2, h3, h4, h5, h6 {
 .hero-content {
     max-width: 800px;
     padding: 2rem;
-    background-color: rgba(0,0,0,0.3);
-    border-radius: 10px;
-    backdrop-filter: blur(5px);
+    background-color: rgba(0,0,0,0.5);
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
 }
 
 .hero-content h1 {
-    font-size: 3.5rem;
+    font-size: 4rem;
     margin-bottom: 1.5rem;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    line-height: 1.2;
     font-weight: 700;
 }
 
 .hero-content p {
-    font-size: 1.4rem;
+    font-size: 1.6rem;
     margin-bottom: 2.5rem;
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+    line-height: 1.4;
+    font-weight: 400;
 }
 
-.cta-button {
+.hero-button {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    background-color: var(--primary-color);
-    color: white;
+    background-color: white;
+    color: var(--primary-color);
     padding: 1rem 2rem;
     border-radius: 8px;
     text-decoration: none;
     font-weight: 600;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     transition: all 0.3s ease;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
-.cta-button i {
+.hero-button i {
     font-size: 1.4rem;
-    margin-right: 0.5rem;
 }
 
-.cta-button:hover {
-    background-color: #004a80;
+.hero-button:hover {
     transform: translateY(-2px);
     box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    background-color: #f8f8f8;
+}
+
+@media (max-width: 992px) {
+    .hero-content h1 {
+        font-size: 3.5rem;
+    }
+
+    .hero-content p {
+        font-size: 1.4rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-section {
+        background-attachment: scroll;
+        padding: 0 1rem;
+        min-height: 100vh;
+        height: auto;
+    }
+
+    .hero-content {
+        padding: 2rem 1rem;
+        margin: 4rem 0;
+        width: 100%;
+    }
+
+    .hero-content h1 {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .hero-content p {
+        font-size: 1.2rem;
+        margin-bottom: 2rem;
+    }
+
+    .hero-button {
+        width: 100%;
+        justify-content: center;
+        padding: 1.2rem;
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+
+    .hero-content p {
+        font-size: 1.1rem;
+    }
+
+    .hero-button {
+        padding: 1rem;
+        font-size: 1rem;
+    }
 }
 
 /* Services Section */
@@ -1114,5 +1171,11 @@ footer {
 
     .cta-banner-text h2 {
         font-size: 2rem;
+    }
+}
+
+@media (max-width: 992px) {
+    .modal {
+        display: none !important;
     }
 } 
