@@ -122,4 +122,4 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 Rental Store Finland - [harri.kuusiluoma@rentalstore.fi](mailto:harri.kuusiluoma@rentalstore.fi)
 
-Project Link: [https://github.com/YOUR_USERNAME/rental-store-finland](https://github.com/YOUR_USERNAME/rental-store-finland)
+Project Link: [https://github.com/CRMforlife/rental-store-finland](https://github.com/CRMforlife/rental-store-finland)
