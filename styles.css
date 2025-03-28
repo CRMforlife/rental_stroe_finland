@@ -139,19 +139,29 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .cta-button {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
     background-color: var(--primary-color);
-    color: var(--white);
+    color: white;
     padding: 1rem 2rem;
-    border-radius: 5px;
+    border-radius: 8px;
     text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
     transition: all 0.3s ease;
-    font-weight: 500;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.cta-button i {
+    font-size: 1.4rem;
+    margin-right: 0.5rem;
 }
 
 .cta-button:hover {
-    background-color: var(--accent-dark);
+    background-color: #004a80;
     transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
 
 /* Services Section */
@@ -417,31 +427,118 @@ footer {
     margin-bottom: 1rem;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    .navbar {
-        flex-direction: column;
-        padding: 1rem;
+/* Mobile Navigation */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+    cursor: pointer;
+    z-index: 100;
+    margin-right: 1rem;
+}
+
+.hamburger span {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: var(--primary-color);
+    transition: all 0.3s ease;
+}
+
+@media (max-width: 992px) {
+    .hamburger {
+        display: flex;
     }
 
     .nav-links {
-        margin: 1rem 0;
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 100%;
+        height: 100vh;
+        background-color: white;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 2rem;
+        padding: 80px 20px;
+        transition: 0.3s ease;
+        z-index: 99;
     }
 
-    .hero-content h1 {
-        font-size: 2rem;
+    .nav-links.active {
+        right: 0;
     }
 
-    .contact-grid {
-        grid-template-columns: 1fr;
+    .nav-links a {
+        font-size: 1.4rem;
+        padding: 1rem;
+        width: 100%;
+        text-align: center;
+        border-bottom: 1px solid #eee;
     }
 
-    .page-header {
-        padding: 6rem 1rem 3rem;
+    .nav-links a:last-child {
+        border-bottom: none;
     }
 
-    .page-header h1 {
-        font-size: 2rem;
+    .nav-links a:hover {
+        background-color: #f8f8f8;
+    }
+
+    .contact-button {
+        position: fixed;
+        bottom: -100%;
+        left: 0;
+        width: 100%;
+        padding: 20px;
+        background-color: white;
+        text-align: center;
+        transition: 0.3s ease;
+        z-index: 99;
+        box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+    }
+
+    .contact-button.active {
+        bottom: 0;
+    }
+
+    .contact-button .btn {
+        width: 90%;
+        margin: 0 auto;
+        display: block;
+        padding: 1rem;
+    }
+
+    .hamburger.active span:nth-child(1) {
+        transform: translateY(9px) rotate(45deg);
+    }
+
+    .hamburger.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active span:nth-child(3) {
+        transform: translateY(-9px) rotate(-45deg);
+    }
+
+    .navbar {
+        padding: 1rem;
+        justify-content: space-between;
+        position: relative;
+        background: white;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    .logo h1 {
+        font-size: 1.5rem;
+    }
+
+    .logo {
+        max-width: 200px;
     }
 }
 
@@ -454,50 +551,46 @@ footer {
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0,0,0,0.7);
-    animation: fadeIn 0.3s ease;
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
 .modal-content {
-    background-color: var(--white);
+    background-color: #fff;
     margin: 15% auto;
-    padding: 2rem;
+    padding: 2.5rem;
     border-radius: 10px;
-    width: 90%;
-    max-width: 500px;
+    max-width: 600px;
     position: relative;
-    color: var(--text-color);
     text-align: center;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
-    animation: slideIn 0.3s ease;
 }
 
 .modal-content h2 {
-    font-size: 1.8rem;
-    margin-bottom: 1rem;
     color: var(--primary-color);
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
 }
 
 .modal-content p {
-    font-size: 1.1rem;
+    color: #666;
+    font-size: 1.2rem;
     line-height: 1.6;
-    margin-bottom: 1.5rem;
-    color: var(--text-color);
+    margin-bottom: 2rem;
 }
 
 .close {
     position: absolute;
-    right: 1rem;
-    top: 1rem;
-    font-size: 1.8rem;
+    right: 1.5rem;
+    top: 1.5rem;
+    font-size: 2rem;
     font-weight: bold;
+    color: #aaa;
     cursor: pointer;
-    color: var(--text-color);
     transition: color 0.3s ease;
 }
 
 .close:hover {
-    color: var(--accent-dark);
+    color: var(--primary-color);
 }
 
 .modal-button {
@@ -505,60 +598,36 @@ footer {
     align-items: center;
     gap: 0.5rem;
     background-color: var(--primary-color);
-    color: var(--white);
+    color: white;
     padding: 1rem 2rem;
     border-radius: 5px;
     text-decoration: none;
-    font-weight: 500;
+    font-weight: 600;
     transition: all 0.3s ease;
-    border: none;
-    cursor: pointer;
 }
 
 .modal-button:hover {
-    background-color: var(--accent-dark);
+    background-color: #004a80;
     transform: translateY(-2px);
-    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
 }
 
 .modal-button i {
     font-size: 1.2rem;
 }
 
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-@keyframes slideIn {
-    from {
-        transform: translateY(-100px);
-        opacity: 0;
-    }
-    to {
-        transform: translateY(0);
-        opacity: 1;
-    }
-}
-
-/* Responsive Design for Modal */
 @media (max-width: 768px) {
     .modal-content {
-        margin: 30% auto;
-        padding: 1.5rem;
+        margin: 20% auto;
+        padding: 2rem;
+        width: 90%;
     }
 
     .modal-content h2 {
-        font-size: 1.5rem;
+        font-size: 2rem;
     }
 
     .modal-content p {
-        font-size: 1rem;
-    }
-
-    .modal-button {
-        padding: 0.8rem 1.5rem;
-        font-size: 0.9rem;
+        font-size: 1.1rem;
     }
 }
 
@@ -866,21 +935,23 @@ footer {
     background-color: var(--primary-color);
     color: var(--white);
     padding: 1rem 2rem;
-    border-radius: 5px;
+    border-radius: 8px;
     text-decoration: none;
+    font-weight: 600;
     font-size: 1.1rem;
-    font-weight: 500;
     transition: all 0.3s ease;
-}
-
-.cta-button:hover {
-    background-color: var(--accent-dark);
-    transform: translateY(-2px);
-    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 .cta-button i {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
+    margin-right: 0.5rem;
+}
+
+.cta-button:hover {
+    background-color: #004a80;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
 
 /* Responsive Design for CTA */
