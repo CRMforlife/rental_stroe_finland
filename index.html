@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rental Store Finland - Tilapäismajoitusta ja palveluja</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="index.html">
+                    <h1>Rental Store Finland</h1>
+                </a>
+            </div>
+            <div class="nav-links">
+                <a href="index.html">Etusivu</a>
+                <a href="majoituskylat.html">Majoituskylät</a>
+                <a href="palvelut.html">Palvelut</a>
+                <a href="yhteystiedot.html">Yhteystiedot</a>
+            </div>
+            <div class="contact-button">
+                <a href="yhteystiedot.html" class="btn">Ota yhteyttä</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="hero" class="hero-section">
+            <div class="hero-content">
+                <h1>Rental Store Finland</h1>
+                <p>Luotettavaa tilapäismajoitusta ja palveluja ympäri Suomen</p>
+                <p>Kokonaisvaltaista majoituspalvelua vuodesta 2006</p>
+                <a href="#yhteystiedot" class="cta-button">Kysy tarjous</a>
+            </div>
+        </section>
+
+        <section id="palvelut" class="services-section">
+            <h2>Palvelumme</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <i class="fas fa-home"></i>
+                    <h3>Tilapäismajoitus</h3>
+                    <p>Kalustettuja majoitusratkaisuja eri tarpeisiin</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-broom"></i>
+                    <h3>Siivouspalvelut</h3>
+                    <p>Ammattitaitoista siivouspalvelua</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-truck"></i>
+                    <h3>Kuljetuspalvelut</h3>
+                    <p>Työmatka-, virike- ja lomakuljetuksia</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="majoituskylat" class="locations-section">
+            <h2>Majoituskylämme</h2>
+            <div class="location-cards">
+                <div class="location-card">
+                    <img src="images/uusikaupunki.jpg" alt="Uusikaupunki majoituskylä">
+                    <h3>Uusikaupunki</h3>
+                    <p>Erinomaisella sijainnilla, vain 5 minuutin työmatka. Modernit ja hyvin varustellut majoitusratkaisut.</p>
+                </div>
+                <div class="location-card">
+                    <img src="images/raisio.jpg" alt="Raisio majoituskylä">
+                    <h3>Raisio</h3>
+                    <p>Laadukkaat majoitusratkaisut ja ammattitaitoinen palvelu. Siivous- ja kuljetuspalvelut saatavilla.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="yhteystiedot" class="contact-section">
+            <h2>Yhteystiedot</h2>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h3>Rental Store Finland Oy</h3>
+                    <p><i class="fas fa-user"></i> Harri Kuusiluoma</p>
+                    <p><i class="fas fa-phone"></i> 050 9117 666</p>
+                    <p><i class="fas fa-envelope"></i> harri.kuusiluoma@rentalstore.fi</p>
+                </div>
+                <div class="contact-form">
+                    <form>
+                        <input type="text" placeholder="Nimi" required>
+                        <input type="email" placeholder="Sähköposti" required>
+                        <input type="tel" placeholder="Puhelinnumero">
+                        <textarea placeholder="Viesti" required></textarea>
+                        <button type="submit" class="submit-button">Lähetä viesti</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Rental Store Finland Oy</h3>
+                <p>Luotettavaa majoituspalvelua vuodesta 2006</p>
+            </div>
+            <div class="footer-section">
+                <h3>Pikalinkit</h3>
+                <a href="index.html">Etusivu</a>
+                <a href="majoituskylat.html">Majoituskylät</a>
+                <a href="palvelut.html">Palvelut</a>
+                <a href="yhteystiedot.html">Yhteystiedot</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Rental Store Finland Oy - Kaikki oikeudet pidätetään</p>
+        </div>
+    </footer>
+
+    <!-- Pop-up Modal -->
+    <div id="popupModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Uusimmat kohteemme</h2>
+            <p>Tutustu uusimpiin majoituskohteisiimme ja varaa aika asiantuntijan kanssa!</p>
+            <div class="modal-buttons">
+                <a href="majoituskylat.html" class="modal-btn primary">Katso kohteet</a>
+                <a href="varaa-aika.html" class="modal-btn secondary">Varaa aika</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Pop-up functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const modal = document.getElementById('popupModal');
+            const closeBtn = document.querySelector('.close-modal');
+            
+            // Show modal after 5 seconds
+            setTimeout(function() {
+                modal.style.display = 'block';
+            }, 5000);
+
+            // Close modal when clicking the X
+            closeBtn.onclick = function() {
+                modal.style.display = 'none';
+            }
+
+            // Close modal when clicking outside
+            window.onclick = function(event) {
+                if (event.target == modal) {
+                    modal.style.display = 'none';
+                }
+            }
+        });
+    </script>
+</body>
+</html> 
