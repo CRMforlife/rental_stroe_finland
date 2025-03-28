@@ -654,18 +654,20 @@ footer {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    background-color: var(--primary-color);
-    color: white;
+    background-color: white;
+    color: var(--primary-color);
     padding: 1rem 2rem;
     border-radius: 5px;
     text-decoration: none;
     font-weight: 600;
     transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 .modal-button:hover {
-    background-color: #004a80;
+    background-color: #f8f8f8;
     transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
 
 .modal-button i {
