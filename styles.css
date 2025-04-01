@@ -104,10 +104,11 @@ h1, h2, h3, h4, h5, h6 {
 /* Hero Section */
 .hero-section {
     height: 100vh;
-    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('images/hero-bg.jpg');
+    background: url('images/hero-bg.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -117,12 +118,29 @@ h1, h2, h3, h4, h5, h6 {
     margin-top: 0;
 }
 
+/* Lisätään gradient overlay */
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 90%; /* Nostetaan 70% -> 90% */
+    background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.8) 0%,
+        rgba(0, 0, 0, 0.6) 40%,
+        rgba(0, 0, 0, 0.3) 70%, /* Hieman tummempi keskivaiheilla */
+        rgba(0, 0, 0, 0) 100%
+    );
+    pointer-events: none;
+}
+
 .hero-content {
+    position: relative; /* Varmistetaan että sisältö on gradientin päällä */
     max-width: 800px;
     padding: 2rem;
-    background-color: rgba(0,0,0,0.5);
-    border-radius: 15px;
-    backdrop-filter: blur(10px);
+    z-index: 1;
 }
 
 .hero-content h1 {
@@ -130,6 +148,7 @@ h1, h2, h3, h4, h5, h6 {
     margin-bottom: 1.5rem;
     line-height: 1.2;
     font-weight: 700;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* Parannetaan luettavuutta */
 }
 
 .hero-content p {
@@ -137,6 +156,7 @@ h1, h2, h3, h4, h5, h6 {
     margin-bottom: 2.5rem;
     line-height: 1.4;
     font-weight: 400;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3); /* Parannetaan luettavuutta */
 }
 
 .hero-button {
@@ -151,7 +171,7 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: 600;
     font-size: 1.2rem;
     transition: all 0.3s ease;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Parannetaan näkyvyyttä */
 }
 
 .hero-button i {
@@ -177,9 +197,12 @@ h1, h2, h3, h4, h5, h6 {
 @media (max-width: 768px) {
     .hero-section {
         background-attachment: scroll;
-        padding: 0 1rem;
         min-height: 100vh;
         height: auto;
+    }
+
+    .hero-section::before {
+        height: 100%; /* Mobiilissa täysi peitto */
     }
 
     .hero-content {
@@ -191,11 +214,13 @@ h1, h2, h3, h4, h5, h6 {
     .hero-content h1 {
         font-size: 2.5rem;
         margin-bottom: 1rem;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4); /* Vahvempi varjo mobiilissa */
     }
 
     .hero-content p {
         font-size: 1.2rem;
         margin-bottom: 2rem;
+        text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4); /* Vahvempi varjo mobiilissa */
     }
 
     .hero-button {
@@ -203,6 +228,7 @@ h1, h2, h3, h4, h5, h6 {
         justify-content: center;
         padding: 1.2rem;
         font-size: 1.1rem;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     }
 }
 
